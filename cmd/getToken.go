@@ -40,6 +40,8 @@ https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth
 		cmd.Println("uri: ", uri)
 		cmd.Println("user_code: ", userCode)
 
+		cmd.Println("\nwaiting to authorize...")
+
 		accessToken, err := pollDeviceAuthorizationGrantToken(clientID, deviceCode)
 		if err != nil {
 			cmd.PrintErrf("failed to poll device authorization grant token: %v", err)
